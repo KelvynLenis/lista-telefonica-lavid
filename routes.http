@@ -1,0 +1,37 @@
+POST http://localhost:3333/contacts
+Content-Type: application/json
+
+{
+  "contactName": "John Doe",
+  "phoneNumber": "1234567890",
+  "location": {
+    "type": "Point",
+    "coordinates": [ -7.129389, 34.843889 ]
+  },
+  "views": 0
+}
+
+###
+
+DELETE http://localhost:3333/contacts/67105748c211fb4fb13c244a
+
+###
+
+GET http://localhost:3333/contacts/6710576e5137c39fa9e2a39f
+
+###
+GET http://localhost:3333/contacts
+
+### 
+PUT http://localhost:3333/contacts/6710576e5137c39fa9e2a39f
+Content-Type: application/json
+
+{
+  "contactName": "Jane Doe",
+  "phoneNumber": "0987654321",
+  "location": {
+    "type": "Point",
+    "coordinates": [ -7.129389, 34.843889 ]
+  },
+  "views": 0
+}
