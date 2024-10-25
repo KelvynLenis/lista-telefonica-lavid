@@ -7,7 +7,7 @@ import { connectToDatabase } from "../lib/database";
 export async function emitAlert(app: FastifyInstance) {
   app
     .withTypeProvider<ZodTypeProvider>()
-    .get('/ws/:id', {
+    .get('/alert/:id', {
       websocket: true,
       schema: {
         params: z.object({

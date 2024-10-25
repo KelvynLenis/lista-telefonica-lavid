@@ -10,6 +10,9 @@ import fastifyRedis from "@fastify/redis";
 import fastifyWebsocket from "@fastify/websocket";
 import { emitAlert } from "./routes/emit-alert";
 
+const port = Number(process.env.PORT) || 3333;
+const host = ("RENDER" in process.env) ? `0.0.0.0` : `localhost`;
+
 const app = fastify();
 
 app.register(fastifyCors, {
@@ -33,7 +36,7 @@ app.register(updateContact)
 app.register(deleteContact)
 app.register(emitAlert)
 
-app.listen({ port: 3333, host: '0.0.0.0' })
+app.listen({ port: port, host: host })
 	.then(() => {
 		console.log("Server is running on port 3333");
 	})
